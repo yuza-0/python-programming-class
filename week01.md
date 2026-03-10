@@ -36,7 +36,7 @@ Python에게 어떤 동작을 수행하도록 하는 코드 한 줄을 의미한
 
 예
 
-val = 30
+```val = 30```
 
 이 코드는 값으로 치환되지 않으므로 expression이 아니다.
 
@@ -49,13 +49,13 @@ Statement는 실행 시 None을 반환하지만 REPL에서는 None을 따로 출
 
 예
 
-val = 30
+```val = 30```
 
 Python에서는 변수 선언과 할당을 하나의 과정으로 처리한다.
 
 다른 언어에서는
 
-int x
+```int x```
 
 처럼 변수 타입을 먼저 선언하지만 Python은 동적 타입 언어(dynamic typing language)이기 때문에 변수에 타입이 없다.
 변수는 단지 객체를 가리키는 이름표(reference) 역할을 한다.
@@ -64,11 +64,9 @@ int x
 
 기본적인 데이터 타입
 
-int : 정수
-
-float : 실수
-
-str : 문자열
+- int : 정수
+- float : 실수
+- str : 문자열
 
 예
 
