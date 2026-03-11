@@ -188,7 +188,8 @@ print() 함수는 값을 출력하는 함수이다.
 
 ```tmp = x
 x = y
-y = tmp```
+y = tmp
+```
 
 Python 방식
 
