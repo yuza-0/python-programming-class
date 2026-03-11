@@ -13,8 +13,6 @@ REPL은 다음을 의미한다.
 Python 프롬프트에서 보이는 `>>>` 기호는 Python 인터프리터가 사용자의 입력을 기다리고 있는 상태를 의미한다.
 REPL의 특징은 마지막 수행 결과를 바로 출력한다는 것이다.
 
----
-
 ## 2. Expression과 Statement
 
 ### Expression
