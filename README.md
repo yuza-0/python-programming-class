@@ -4,9 +4,9 @@
 
 ## Weekly Notes
 
--[Week 1](week01.md)
+- [Week 1](week01.md)
 
--[Week 2](week02.md)
+- [Week 2](week02.md)
 
 - Week 3
 - Week 4
