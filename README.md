@@ -8,7 +8,7 @@
 
 - [Week 2](week02.md)
 
-- Week 3
+- [Week 3](week03.md)
 - Week 4
 - Week 5
 - Week 6
