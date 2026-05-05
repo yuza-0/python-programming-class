@@ -22,7 +22,6 @@
 # 1. if, elif, else statements
 
 
-![alt text](image-47.png)
 
 ## 기본 구조
 
@@ -721,10 +720,6 @@ mutable 함수는 공유하고 복사하면 같이 바뀌기 때문에 이를 �
 # 5. 윤성우의 열혈 파이썬 7,8
 
 ### 진실성
-![alt text](image-48.png)
-![alt text](image-49.png)
-![alt text](image-50.png)
-![alt text](image-51.png)
 
 
 ---
