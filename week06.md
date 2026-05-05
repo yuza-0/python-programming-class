@@ -1,329 +1,732 @@
-# Week05
+# Week06
 
 ## 이번 주 큰 흐름
-- list , list의 메소드
-- string, string의 메소드
--  Escape Sequence
-- CR(Carriage Return)과 LF(Line Feed)
-- 윤성우의 열혈 5,6
+- if, elif, else statements
+
+- Control Flow 와 Control Structure
+    - while statement
+    - for statement
+    - else (break checker)
+
+- dunder:`__name__`
+
+- Shallow Copy and Deep Copy
+    - mutability
+    - strong typing
+    - dynamic typed language
+    - shallow copy vs. deep copy
+
+- 윤성우 ch7
+
+
+# 1. if, elif, else statements
+
+
+![alt text](image-47.png)
+
+## 기본 구조
+
+조건에 따라 코드 실행 (flow control)
+
+```python
+if condition:
+    실행1
+elif condition:
+    실행2
+else:
+    실행3
+```
+
+
+## 동작 방식
+
+위에서부터 순서대로 검사
+
+```python
+x = 10
+
+if x > 20:
+    print("A")
+elif x > 5:
+    print("B")
+else:               # 그 전 if문이 True여서 무시
+    print("C") 
+```
+
+👉 결과
+```
+B
+```
+
+
+## condition
+
+조건은 항상 True / False로 평가됨
+
+```python
+x = 10
+
+if x > 5 and x < 20:
+    print("OK")
+```
+##elif / else 
+
+```
+if → 단독 가능
+elif → 단독 불가
+else → 단독 불가
+```
+
+## 범위 나누기 예제
+
+```python
+age = 20
+
+if age < 18:
+    print("미성년자")
+elif age < 65:
+    print("성인")
+else:
+    print("노인")
+```
+
+👉 결과
+```
+성인
+```
+
+## 중첩 (nesting) 과 elif의 차이
+
+### elif (같은 레벨, 하나만 실행)
+
+```python
+x = 10
+
+if x > 20:
+    print("A")
+elif x > 5:
+    print("B")
+else:
+    print("C")
+```
+
+👉 결과
+```
+B
+```
+
+### 중첩 if (안에서 또 검사)
+
+```python
+x = 10
+
+if x > 0:
+    if x > 5:
+        print("B")
+```
+
+👉 결과
+```
+B
+```
+
+# 2. Control Flow 와 Control Structure
+
+프로그램 실행 흐름을 제어하는 구조
+
+- 기본: 위 → 아래 순차 실행, 제어문으로 흐름 변경 가능
+
+- Control Flow = 실행 경로  
+- Control Structure = 그걸 만드는 문법
+
+
+
+
+## 구조 종류
+
+### 순차 구조
+```python
+print(1)
+print(2)
+```
+
+👉 그대로 위에서 아래 실행
+
+
+### 분기 구조 (if)
+
+```python
+x = 10
+
+if x > 0:
+    print("양수")
+else:
+    print("음수")
+```
+
+👉 조건에 따라 실행 경로 변경
+
+
+### 반복 구조 (for / while)
+
+```python
+for i in range(3):
+    print(i)
+```
+
+```python
+i = 0
+while i < 3:
+    print(i)
+    i += 1
+```
+
+같은 코드 반복 실행
+
+
+##  for vs while
+
+| 구분 | for | while |
+|------|-----|-------|
+| 기준 | 횟수/데이터 | 조건 |
+| 사용 | 반복 횟수 알 때 | 조건 기반 |
+
+
+## 흐름 제어 키워드
+
+### break
+반복 즉시 종료. if 안에 있어도 → while을 끊는다
+
+```python
+for i in range(5):
+    if i == 3:
+        break
+    print(i)
+```
+
+👉 결과
+```
+0 1 2
+```
+
+---
+
+### continue
+현재 반복만 건너뜀. 반복문에만 작용.
+
+```python
+for i in range(5):
+    if i == 2:
+        continue
+    print(i)
+```
+
+👉 결과
+```
+0 1 3 4
+```
+
+---
+
+### return
+👉 함수 종료 + 값 반환
+
+```python
+def f():
+    return 10
+```
+
+
+# 2.1 while statement
+
+
+
+## while 기본 구조
+
+조건이 True인 동안 반복
+
+```python
+while 조건:
+    실행코드
+```
+
+
+## 예제
+
+```python
+a = 1
+
+while a < 5:
+    print(a)
+    a += 1
+```
+
+👉 결과
+```text
+1
+2
+3
+4
+```
+
+`a += 1`이 없으면 조건이 계속 True라서 무한루프가 될 수 있음
+
+
+##  break
+
+👉 반복문을 즉시 종료
+
+```python
+i = 0
+
+while True:
+    if i == 3:
+        break
+    print(i)
+    i += 1
+```
+
+👉 결과
+```text
+0
+1
+2
+```
+
+##  continue
+
+👉 현재 반복의 나머지를 건너뛰고 다음 반복으로 이동
+
+```python
+i = 0
+
+while i < 5:
+    i += 1
+
+    if i == 3:
+        continue
+
+    print(i)
+```
+
+👉 결과
+```text
+1
+2
+4
+5
+```
+
+---
+
+## do-while 비슷하게 만들기
+
+👉 Python에는 do-while 없음  
+👉 `while True + break`로 구현
+
+```python
+while True:
+    answer = input("종료할까요? y/n: ")
+
+    if answer == "y":
+        break
+```
+
+최소 1번은 실행됨
+
+---
+
+## continue 예제: 알파벳 개수 세기
+
+```python
+s = "a1b2c3"
+
+cnt = 0
+idx = 0
+
+while True:
+    if idx >= len(s):
+        break
+
+    if not s[idx].isalpha():
+        idx += 1
+        continue
+
+    cnt += 1
+    idx += 1
+
+print(cnt)
+```
+
+👉 결과
+```text
+3
+```
+
+---
+
+# 2.2 for statement
+
+iterable 객체를 순회하면서 반복 실행
+
+```python
+for 변수 in iterable:
+    실행코드
+```
+
+
+## 리스트
+
+```python
+l = [1, 2, 3]
+
+for x in l:
+    print(x)
+```
+
+👉 결과
+```
+1
+2
+3
+```
+
+
+## 문자열 
+
+```python
+s = "abc123"
+
+for c in s:
+    if c.isdigit():
+        print(c)
+```
+
+👉 결과
+```
+1
+2
+3
+```
+
+## range 
+
+숫자 반복할 때 사용
+
+```python
+for i in range(5):
+    print(i)
+```
+
+👉 결과
+```
+0 
+1 
+2 
+3 
+4
+```
+
+### range(start, end, step)
+
+```python
+for i in range(0, 10, 2):
+    print(i)
+```
+
+👉 결과
+```
+0 
+2 
+4 
+6 
+8
+```
+
+## zip (여러 개 동시에)
+
+```python
+a = [1, 2, 3]
+b = ['a', 'b', 'c']
+
+for x, y in zip(a, b):  # zip은 튜플의 묶음.
+    print(x, y)
+    print(f'{x},{y}')
+```
+
+👉 결과
+```
+1 a
+1,a
+2 b
+2,b
+3 c
+3,c
+```  
+짧은 쪽 기준으로 반복
+
+
+## tuple로 받기
+
+```python
+a = [1, 2]
+b = ['a', 'b']
+
+for t in zip(a, b):
+    print(t)
+```
+
+👉 결과
+```
+(1, 'a')
+(2, 'b')
+```
+
+## 중첩 for
+
+```python
+for i in range(2):
+    for j in range(2):
+        print(i, j)
+```
+
+👉 결과
+```
+0 0
+0 1
+1 0
+1 1
+```
+
 ---
 
 
-# 1. list , list의 메소드
 
-## 1.1 list
+# 2.3 else (break checker)
 
-sequence type 중에서 유일 mutable 객체.
+## 조건문에서 else
+일반적으로 else의 경우, 앞서의 if 와 elif문들에서 실행된 block이 없는 경우 수행되는 것을 의미한다.
 
-sequen
+## 반복문에서 else
+그런데 python에서는 for와 while과 같은 loop structure 에서도
+else를 뒤에 붙여서 break로 해당 loop가 나왔는지를 체크할 수 있다.
 
-### 특징
+앞서의 loop structure에서 break로 종료되지 않은 경우에 수행
 
-- list = **순서 있음 (ordered)** + **변경 가능 (mutable)**
-- 다양한 타입 혼합 가능 (heterogeneous)
+# 3. dunder:`__name__`
 
-#### 참고 용어 : `Mutability`
 
-객체의 value를 변경할 수 있는지. Variable이 자유롭게 다른 object를 가르키도록(refer to) 할 수 있는 것이지 object 자체는  type 변경 불가한 strong typed임.
-
-- list : mutable sequence
-
--  tuple : immutable sequence
-
--  string : immutable text sequence
-sequen
-
-### 인덱싱
+### 상황1
 
 ```python
-a = [10, 20, 30]
+# adder2.py
+def adder(num1, num2):
+    return num1 + num2
 
-print(a[0])   # 10
-print(a[-1])  # 30
+def main():
+    print(adder(5, 3))
+
+main()
 ```
-### 값 변경
-- 인덱싱
 ```python
-st = [1, 2, 3, 4, 5]
+# test.py
+import adder2
 
-st[0] = 10
-st[4] = 50
-
-print(st)
+print(adder2.adder(10, 20))
 ```
 
-👉 결과
-```
-[10, 2, 3, 4, 50]
-```
-
-
-- 슬라이싱
+### 실행 1: adder2.py 실행
 ```python
-st = [1, 2, 3, 4, 5]
-
-st[1:3] = [100, 200]
-
-print(st)
+# adder2.py
+실행 흐름
+adder 함수 정의
+main 함수 정의
+main() 실행
+adder(5, 3) → 8 출력
+결과
+8
 ```
-
-👉 결과
-```
-[1, 100, 200, 4, 5]
-```
-- 슬라이싱 + 삭제 느낌
+### 실행 2: test.py 실행
 ```python
-st = [1, 2, 3, 4, 5]
+1. test.py 시작
+ # test.py
+import adder2
 
-st[1:4] = []
+2. adder2.py 실행됨 (import 때문에)
+# adder2.py
+adder 정의
+main 정의
+❗ main() 실행됨 (# 문제!)
+→ 출력: 8
 
-print(st)
+3. 다시 test.py로 돌아옴
+print(adder2.adder(10, 20))
+
+→ 출력:30
+
+최종 결과
+8(원하지 않음)
+30
 ```
 
-👉 결과
-```
-[1, 5]
-```
+---
 
 
-### 슬라이싱
+### 상황 2: if __name__ == "__main__" 사용
 
 ```python
-a = [0, 1, 2, 3, 4]
+# adder2.py
+def adder(num1, num2):
+    return num1 + num2
 
-print(a[1:3])   # [1, 2]
-print(a[:2])    # [0, 1]
-print(a[2:])    # [2, 3, 4]
+def main():
+    print(adder(5, 3))
+
+if __name__ == "__main__":
+    main()
 ```
-### Slicing - 값으로 사용(새로운 객체)
+
+### 실행 1: adder2.py 실행
+```
+python adder2.py
+내부 상태
+__name__ == "__main__"
+
+→ 조건 참 → main() 실행
+
+결과
+8
+```
+### 실행 2: test.py 실행
+```
+python test.py
+내부 상태 (adder2.py 입장)
+__name__ == "adder2"
+
+→ 조건 거짓 → main() 실행 안 됨
+
+결과
+30
+```
+
+
+# 4. Shallow Copy and Deep Copy
+
+
+```
+= (assignment) → 같은 객체 공유
+[:] / copy() → 얕은 복사 (겉만 복사)
+deepcopy() → 완전 복사
+```
+
+```
+mutable → 바뀜 (공유하면 영향 있음)
+immutable → 안 바뀜 (공유해도 안전)
+```
+
+## 4.1 Assignment - mutable
+
 ```python
 a = [1, 2, 3]
-b = a[:]
+b = a
 
 b[0] = 100
 
-print(a)  # [1, 2, 3]
-print(b)  # [100, 2, 3] # 새로운 리스트 생성 (shallow copy)**
+print(a)  # [100, 2, 3]
 ```
+
+👉 이유  
+- a, b **같은 리스트 가리킴**
+
+ 
+```
+a is b → True
+```
+
+
+## 4.2 Shallow Copy (얕은 복사) - mutable
 
 ```python
-st = [1, 2, 3]
+a = [[1, 2], 3]
+b = a[:]
 
-st[:] = [0]  # 기존 리스트 유지 (내용만 변경)
+b[0][0] = 999
+
+print(a)  # [[999, 2], 3]
 ```
+
+👉 이유  
+- 겉 리스트는 다름
+- **안쪽 리스트는 공유됨**
+
+📌 핵심  
+```
+a is b → False
+a[0] is b[0] → True
+```
+
+
+##  4.3 Deep Copy (완전 복사)
+
+```python
+import copy
+
+a = [[1, 2], 3]
+b = copy.deepcopy(a)
+
+b[0][0] = 999
+
+print(a)  # [[1, 2], 3]
+```
+
+이유  
+- 내부까지 전부 새로 생성
+
+
+
+## 4.4 Immutable (변경 불가)
+
+👉 대표: int, float, str, tuple
+
+```python
+a = (1, 2, 3)
+b = a
+
+print(a is b)  # True
+```
+
+👉 같은 객체지만 문제 없음
+
 ---
-### Slicing - 변경만(기존 객체 유지)
-모두 대체
+
+### 수정 시
+
 ```python
-st = [1, 2, 3, 4, 5]
-
-st[:] = [0, 0, 0, 0, 0]
-
-print(st)
+b += (4,)
 ```
 
 👉 결과
-```
-[0, 0, 0, 0, 0]
-```
+
+- b → 새 객체 생성
+- a → 그대로
+
 ---
 
-하나로 대체
-```python
-st = [1, 2, 3, 4, 5]
+### copy 관점 정리
+mutable 함수는 공유하고 복사하면 같이 바뀌기 때문에 이를 방지하기 위해 deep copy 사용, immutable은 공유해도 복사하면 같이 안바뀜.
 
-st[:] = [0]
 
-print(st)
-```
 
-👉 결과
-```
-[0]
-```
-없애는 느낌으로
-```python
-st = [1, 2, 3, 4, 5]
 
-st[:] = []
+# 5. 윤성우의 열혈 파이썬 7,8
 
-print(st)
-```
+### 진실성
+![alt text](image-48.png)
+![alt text](image-49.png)
+![alt text](image-50.png)
+![alt text](image-51.png)
 
-👉 결과
-```
-[]
-```
+
 ---
-
-### + and * operation
-```python
-a = [1, 2]
-b = [3, 4]
-
-print(a + b)  # [1, 2, 3, 4]
-```
-
-```python
-a = [1, 2]
-
-print(a * 3)  # [1, 2, 1, 2, 1, 2]
-```
-
-### in membership operation
-
-```python
-a = [1, 2, 3]
-
-print(2 in a)    # True
-print([2,3] in a) # False
-```
-
-### 정렬(sorted)
-
-```python
-a = [3, 1, 2]
-b = sorted(a)
-
-print(a)  # [3, 1, 2]
-print(b)  # [1, 2, 3]
-```
-
-### sort (원본 변경)
-
-```python
-a = [3, 1, 2]
-a.sort() # sort()는 반환값이 없음
-
-print(a)  # [1, 2, 3]
-```
-
-## 1.2 list의 메소드
-
-일반적으로 object에 대해 method를 호출할 경우,해당 object의 관련 attribute의 값이 바뀌고 None을 반환하는 경우가 많다.
-
-반환값으로 해당 list의 object를 다시 할당시 None이 되는 문제가 발생하지 않도록 주의해야 한다.
-
-![alt text](image-40.png)
-
-## 🔹 clear()
-리스트 모든 요소 삭제 (빈 리스트 됨, 반환값 없음)
-
-```python
-l = [1, 2, 3]
-l.clear()
-
-print(l)  # []
-```
-
-
-## 🔹 pop()
-리스트의 마지막 요소를 반환하면서 삭제 
-
-```python
-l = [1, 2, 3]
-x = l.pop()
-
-print(x)  # 3
-print(l)  # [1, 2]
-```
-
-## 🔹 append()
-마지막에 요소 하나 추가 (반환값 없음)
-
-```python
-l = [1, 2]
-l.append(3)
-
-print(l)  # [1, 2, 3]
-```
-
-## 🔹 insert()
-특정 위치에 요소 삽입 (반환값 없음)
-
-```python
-l = [1, 3]
-l.insert(1, 2)
-
-print(l)  # [1, 2, 3]
-```
-
-
-## 🔹 extend()
-리스트 뒤에 여러 요소 추가 (반환값 없음)
-
-```python
-l = [1, 2]
-l.extend([3, 4])
-
-print(l)  # [1, 2, 3, 4]
-```
-
-## 🔹 remove()
-값으로 요소 삭제 (첫 번째 것만)
-
-```python
-l = [1, 2, 2, 3]
-l.remove(2)
-
-print(l)  # [1, 2, 3]
-```
-
-⚠️ 없으면 에러 발생
-
-
-## 🔹 del
-인덱스로 요소 삭제
-
-```python
-l = [1, 2, 3]
-del l[1]
-
-print(l)  # [1, 3]
-```
-
-## 🔹 index()
-값의 위치 반환 (없으면 에러)
-
-```python
-l = [1, 2, 3]
-print(l.index(2))  # 1
-```
-
-## 🔹 count()
-특정 값 개수 반환
-
-```python
-l = [1, 2, 2, 3]
-print(l.count(2))  # 2
-```
-
-## 🔹 reverse()
-순서 뒤집기 (반환값 없음)
-
-```python
-l = [1, 2, 3]
-l.reverse()
-
-print(l)  # [3, 2, 1]
-```
-
-## 🔹 sort()
-리스트 정렬 (원본 변경, 반환값 없음)
-
-```python
-l = [3, 1, 2]
-l.sort()
-
-print(l)  # [1, 2, 3]
-```
-
-```python
-l.sort(reverse=True)  # 내림차순
-```
-## 주의사항
-
-```
-append, insert, extend, clear, reverse, sort → 반환값 없음 (None)
-pop, index, count → 값 반환
-```
+### 이중 for
+![alt text](image-52.png)
