@@ -784,3 +784,16 @@ f = False
 
 kwargs = {'x': 100, 'y': 200}
 ```
+
+
+# 8. 윤성우의 열혈 파이썬 10
+
+### 인자 전달
+<img width="313" height="113" alt="image" src="https://github.com/user-attachments/assets/04593c55-dcf5-451d-8c84-13a89ac51904" />
+
+<img width="222" height="200" alt="image" src="https://github.com/user-attachments/assets/3c789cb5-b9ba-4d41-ad0a-8de4fddbb270" />
+
+<img width="299" height="177" alt="image" src="https://github.com/user-attachments/assets/27cc73de-9dec-461d-a284-7cd0dbe3846a" />
+
+
+
