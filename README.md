@@ -20,9 +20,11 @@
 
 - [Week 8](week08.md)
   
-- [We
+- [Week 9](week09.md)
   
 - [Week 10](week10.md)
+
+  
 - Week 11
 - Week 12
 - Week 13
