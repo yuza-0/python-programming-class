@@ -85,7 +85,7 @@ a, b = 1, 2
 print(a, b)  # 1 2
 ```
 
-👉 사실은:
+사실은:
 
 ```
 (1, 2) → unpacking
@@ -164,18 +164,18 @@ range(start, stop, step)
 list(range(1, 10, 2))
 ```
 
-👉 결과
+결과
 ```
 [1, 3, 5, 7, 9]
 ```
 
-## 🔹 4. 음수 step
+##  4. 음수 step
 
 ```python
 list(range(5, 0, -1))
 ```
 
-👉 결과
+결과
 ```
 [5, 4, 3, 2, 1]
 ```
@@ -209,7 +209,7 @@ for idx, val in enumerate(a):
     print(idx, val)
 ```
 
-👉 결과
+결과
 ```
 0 a
 1 b
@@ -224,7 +224,7 @@ for idx, val in enumerate(a, 1):
     print(idx, val)
 ```
 
-👉 결과
+결과
 ```
 1 a
 2 b
@@ -239,7 +239,7 @@ for idx, val in enumerate(a, 1):
 list(enumerate(['a','b']))
 ```
 
-👉 결과
+결과
 ```
 [(0, 'a'), (1, 'b')]
 ```
@@ -264,7 +264,7 @@ shorthand expression으로 중첩된 여러 반복문(loop) 및 조건문(if)으
 ```
 
 
-## 🔹 예제
+## 예제
 
 ```python
 [x*2 for x in [1,2,3,4] if x % 2 == 0]
@@ -277,7 +277,7 @@ shorthand expression으로 중첩된 여러 반복문(loop) 및 조건문(if)으
 4 → 조건 True → 4*2 → 추가
 ```
 
-👉 결과
+결과
 ```
 [4, 8]
 ```
@@ -313,7 +313,7 @@ b = [x * 2 for x in a]
 print(b)
 ```
 
-👉 결과
+결과
 ```
 [2, 4, 6]
 ```
@@ -347,7 +347,7 @@ result = [(i, j) for i in range(2) for j in range(2)]
 print(result)
 ```
 
-👉 결과
+결과
 ```
 [(0,0), (0,1), (1,0), (1,1)]
 ```
@@ -362,7 +362,7 @@ print(result)
 t = (x*2 for x in [1,2,3])
 ```
 
-👉 결과
+결과
 ```
 generator 객체 (tuple 아님)
 ```
@@ -382,3 +382,11 @@ namespace로 바꿔 애기해도 많은 부분에서 통용된다.
 
 
 # 3. 윤성우의 열혈 파이썬 9
+
+### list와 tuple
+<img width="270" height="211" alt="image" src="https://github.com/user-attachments/assets/ced5a9b5-52a8-46d4-9529-9e9d3fb5d0b3" />
+
+---
+### range
+<img width="281" height="120" alt="image" src="https://github.com/user-attachments/assets/687dcfe6-e7b2-4239-bcd2-e7d3de85137f" />
+
