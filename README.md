@@ -17,8 +17,11 @@
 - [Week 6](week06.md)
   
 - [Week 7](week07.md)
-- Week 8
-- Week 9
+
+- [Week 8](week08.md)
+  
+- [We
+  
 - [Week 10](week10.md)
 - Week 11
 - Week 12
