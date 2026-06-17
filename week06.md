@@ -22,6 +22,8 @@
 # 1. if, elif, else statements
 
 
+<img width="160" height="151" alt="image" src="https://github.com/user-attachments/assets/7267ed9b-3917-4e76-a071-3fe37ea85723" />
+
 
 ## 기본 구조
 
@@ -52,7 +54,7 @@ else:               # 그 전 if문이 True여서 무시
     print("C") 
 ```
 
-👉 결과
+결과
 ```
 B
 ```
@@ -89,7 +91,7 @@ else:
     print("노인")
 ```
 
-👉 결과
+결과
 ```
 성인
 ```
@@ -109,7 +111,7 @@ else:
     print("C")
 ```
 
-👉 결과
+결과
 ```
 B
 ```
@@ -124,7 +126,7 @@ if x > 0:
         print("B")
 ```
 
-👉 결과
+결과
 ```
 B
 ```
@@ -149,7 +151,7 @@ print(1)
 print(2)
 ```
 
-👉 그대로 위에서 아래 실행
+그대로 위에서 아래 실행
 
 
 ### 분기 구조 (if)
@@ -163,7 +165,7 @@ else:
     print("음수")
 ```
 
-👉 조건에 따라 실행 경로 변경
+조건에 따라 실행 경로 변경
 
 
 ### 반복 구조 (for / while)
@@ -203,14 +205,15 @@ for i in range(5):
     print(i)
 ```
 
-👉 결과
+결과
 ```
 0 1 2
 ```
 
 ---
 
-### continue
+### continue (⭐ 시험 )
+
 현재 반복만 건너뜀. 반복문에만 작용.
 
 ```python
@@ -220,7 +223,7 @@ for i in range(5):
     print(i)
 ```
 
-👉 결과
+결과
 ```
 0 1 3 4
 ```
@@ -228,7 +231,7 @@ for i in range(5):
 ---
 
 ### return
-👉 함수 종료 + 값 반환
+함수 종료 + 값 반환
 
 ```python
 def f():
@@ -260,7 +263,7 @@ while a < 5:
     a += 1
 ```
 
-👉 결과
+결과
 ```text
 1
 2
@@ -273,7 +276,7 @@ while a < 5:
 
 ##  break
 
-👉 반복문을 즉시 종료
+반복문을 즉시 종료
 
 ```python
 i = 0
@@ -285,7 +288,8 @@ while True:
     i += 1
 ```
 
-👉 결과
+ 
+결과
 ```text
 0
 1
@@ -294,7 +298,7 @@ while True:
 
 ##  continue
 
-👉 현재 반복의 나머지를 건너뛰고 다음 반복으로 이동
+현재 반복의 나머지를 건너뛰고 다음 반복으로 이동
 
 ```python
 i = 0
@@ -308,7 +312,8 @@ while i < 5:
     print(i)
 ```
 
-👉 결과
+ 
+결과
 ```text
 1
 2
@@ -320,8 +325,8 @@ while i < 5:
 
 ## do-while 비슷하게 만들기
 
-👉 Python에는 do-while 없음  
-👉 `while True + break`로 구현
+Python에는 do-while 없음  
+`while True + break`로 구현
 
 ```python
 while True:
@@ -357,7 +362,7 @@ while True:
 print(cnt)
 ```
 
-👉 결과
+결과
 ```text
 3
 ```
@@ -383,7 +388,7 @@ for x in l:
     print(x)
 ```
 
-👉 결과
+결과
 ```
 1
 2
@@ -401,7 +406,7 @@ for c in s:
         print(c)
 ```
 
-👉 결과
+결과
 ```
 1
 2
@@ -417,7 +422,7 @@ for i in range(5):
     print(i)
 ```
 
-👉 결과
+ 결과
 ```
 0 
 1 
@@ -433,7 +438,7 @@ for i in range(0, 10, 2):
     print(i)
 ```
 
-👉 결과
+결과
 ```
 0 
 2 
@@ -453,7 +458,7 @@ for x, y in zip(a, b):  # zip은 튜플의 묶음.
     print(f'{x},{y}')
 ```
 
-👉 결과
+결과
 ```
 1 a
 1,a
@@ -475,7 +480,7 @@ for t in zip(a, b):
     print(t)
 ```
 
-👉 결과
+결과
 ```
 (1, 'a')
 (2, 'b')
@@ -489,7 +494,7 @@ for i in range(2):
         print(i, j)
 ```
 
-👉 결과
+결과
 ```
 0 0
 0 1
@@ -512,7 +517,7 @@ else를 뒤에 붙여서 break로 해당 loop가 나왔는지를 체크할 수 �
 
 앞서의 loop structure에서 break로 종료되지 않은 경우에 수행
 
-# 3. dunder:`__name__`
+# 3. dunder:`__name__` (⭐ 시험 )
 
 
 ### 상황1
@@ -609,7 +614,7 @@ __name__ == "adder2"
 ```
 
 
-# 4. Shallow Copy and Deep Copy
+# 4. Shallow Copy and Deep Copy (⭐ 시험 )
 
 
 ```
@@ -634,7 +639,7 @@ b[0] = 100
 print(a)  # [100, 2, 3]
 ```
 
-👉 이유  
+이유  
 - a, b **같은 리스트 가리킴**
 
  
@@ -654,11 +659,11 @@ b[0][0] = 999
 print(a)  # [[999, 2], 3]
 ```
 
-👉 이유  
+이유  
 - 겉 리스트는 다름
 - **안쪽 리스트는 공유됨**
 
-📌 핵심  
+핵심  
 ```
 a is b → False
 a[0] is b[0] → True
@@ -685,7 +690,7 @@ print(a)  # [[1, 2], 3]
 
 ## 4.4 Immutable (변경 불가)
 
-👉 대표: int, float, str, tuple
+대표: int, float, str, tuple
 
 ```python
 a = (1, 2, 3)
@@ -694,7 +699,7 @@ b = a
 print(a is b)  # True
 ```
 
-👉 같은 객체지만 문제 없음
+같은 객체지만 문제 없음
 
 ---
 
@@ -704,7 +709,7 @@ print(a is b)  # True
 b += (4,)
 ```
 
-👉 결과
+결과
 
 - b → 새 객체 생성
 - a → 그대로
@@ -720,8 +725,11 @@ mutable 함수는 공유하고 복사하면 같이 바뀌기 때문에 이를 �
 # 5. 윤성우의 열혈 파이썬 7,8
 
 ### 진실성
+<img width="119" height="203" alt="image" src="https://github.com/user-attachments/assets/6d201db7-5d57-4f7d-b755-10bdede4deac" />
+
 
 
 ---
 ### 이중 for
-![alt text](image-52.png)
+<img width="240" height="162" alt="image" src="https://github.com/user-attachments/assets/f0a3c20f-202b-44db-894e-a9e33d739b7d" />
+<img width="240" height="162" alt="image" src="https://github.com/user-attachments/assets/c4541a7c-c818-4946-abe0-a8d415a0ad1e" />
